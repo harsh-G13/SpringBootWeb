@@ -1,11 +1,21 @@
 package org.example;
 
-import javax.servlet.http.HttpServlet;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
+import jakarta.servlet.annotation.WebServlet;
+import jakarta.servlet.http.HttpServlet;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
+
+import java.io.IOException;
+import java.io.Serial;
+
 
 public class HelloServlet extends HttpServlet {
-    public void service(HttpServletRequest req, HttpServletResponse res){
-        System.out.println("In service");
+    @Serial
+    private static final long serialVersionUID = 1L;
+
+    @Override
+    protected void service(HttpServletRequest req, HttpServletResponse res) throws IOException {
+        res.getWriter().write("In Service...");
+        System.out.println("In Service...");
     }
 }
