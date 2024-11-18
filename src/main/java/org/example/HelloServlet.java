@@ -10,8 +10,7 @@ import java.io.Serial;
 
 
 public class HelloServlet extends HttpServlet {
-    @Serial
-    private static final long serialVersionUID = 1L;
+
 
     @Override
     protected void service(HttpServletRequest req, HttpServletResponse res) throws IOException {
